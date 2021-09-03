@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+@model QuoteApp.Models.AddAuthorModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Quote</title>
+</head>
+<body>
+    <form asp-action="AddAuthor" method="post">
+        <div>
+            <label for="Quote">Your Quote:</label>
+            <input asp-for="Quote" />
+        </div>
+        <div>
+            <label for="Author">Author:</label>
+            <input asp-for="Author" />
+        </div>
+        <button type="submit">
+            Add
+        </button>
+    </form>    
+</body>
+</html>

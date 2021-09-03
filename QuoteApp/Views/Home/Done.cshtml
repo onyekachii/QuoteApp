@@ -1,0 +1,19 @@
+﻿@model QuoteApp.Models.AddAuthorModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div>
+        <h1>Thank you, @Model.Author's quote:</h1>
+        <q>@Model.Quote</q>
+        <h1>has been added</h1>        
+    </div>
+    Click <a asp-action="Index">here</a> to see more Quotes.
+</body>
+</html>
