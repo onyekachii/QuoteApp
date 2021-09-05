@@ -1,0 +1,15 @@
+﻿body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:ghostwhite;
+}
+h1 {
+    color: teal;
+}
+p{
+    margin-bottom: 0px;
+}
+a{
+    text-decoration: none;
+}

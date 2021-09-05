@@ -7,20 +7,23 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>New Quote</title>
+    <link rel="stylesheet" href="/css/Style.css" />
 </head>
 <body>
+    <h1>Add a Quote</h1>
     <form asp-action="AddAuthor" method="post">
         <div>
-            <label for="Quote">Your Quote:</label>
+            <label for="Quote">Your Quote:</label><br/>
             <input asp-for="Quote" />
         </div>
         <div>
-            <label for="Author">Author:</label>
+            <label for="Author">Author:</label><br/>
             <input asp-for="Author" />
         </div>
         <button type="submit">
             Add
         </button>
-    </form>    
+    </form>
+    <div asp-validation-summary="All"></div>
 </body>
 </html>

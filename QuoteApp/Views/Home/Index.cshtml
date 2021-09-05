@@ -1,23 +1,20 @@
 ﻿@{
     Layout = null;
 }
-@model IEnumerable<QuoteApp.Models.AddAuthorModel>
-@{ var quotes = QuoteApp.Helpers.ListOfQuotes.quotes;
-   Random rand = new Random();
-   var randomNumber = rand.Next(0, quotes.Count);
-}
+ 
+@model AddAuthorModel
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Quotes</title>
+    <link rel="stylesheet" href="~/css/Home.css" />
 </head>
 <body>
-    <div>
-        <h1>@quotes[randomNumber].Author;</h1>
-        <p>@quotes[randomNumber].Quote</p>        
-    </div>
+    <h1>Quotes of Great Men and Women</h1>
+    <p><q> @Model.Quote </q></p>
+    <p><em> @Model.Author;</em></p><br/>
     <a asp-action="AddAuthor">Add a new Quote</a>
 </body>
 </html>

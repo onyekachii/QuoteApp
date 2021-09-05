@@ -21,7 +21,11 @@ namespace QuoteApp.Controllers
 
         public IActionResult Index()
         {
-            return View(ListOfQuotes.Quoets);
+            List<AddAuthorModel> q = ListOfQuotes.quotes;            
+            Random rand = new Random();
+            var randomNumber = rand.Next(0, q.Count());
+            var qoute = q[randomNumber];
+            return View(qoute);
         }
 
         [HttpGet]
@@ -33,19 +37,18 @@ namespace QuoteApp.Controllers
         [HttpPost]
         public ViewResult AddAuthor(AddAuthorModel quoteDetail)
         {
-            ListOfQuotes.Add(quoteDetail);
-            return View("Done", quoteDetail);
+            if (ModelState.IsValid)
+            {
+                ListOfQuotes.Add(quoteDetail);
+                return View("Done", quoteDetail);
+            }
+            return View();
+            
         }
 
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        }        
     }
 }
